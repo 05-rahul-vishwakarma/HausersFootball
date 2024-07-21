@@ -43,7 +43,16 @@ app.use(express.json());
 
 const static = path.join(__dirname, "../public");
 app.use(express.static(static));
-app.set("view engine", "hbs");
+
+app.set('view engine', 'hbs');
+
+// Set the views directory
+app.set('views', path.join(__dirname, '../src/views'));
+
+
+// app.set("view engine", "hbs");
+// app.set("views", path.join(__dirname, "src/views"));
+
 
 const db_link =
     "mongodb+srv://vishwakarma9304411522:iYKrVdZQfHRZvqSw@cluster0.yptxrpi.mongodb.net/?retryWrites=true&w=majority";
