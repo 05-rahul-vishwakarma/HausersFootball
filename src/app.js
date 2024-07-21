@@ -25,7 +25,7 @@ const fs = require("fs");
 const { gateway_deposit } = require("../controller/recharge_controler");
 
 let port = process.env.PORT || 3500;
-
+const punycode = require('punycode/');
 const userRouter = require("../routers/userRouter");
 const homeRouter = require("../routers/homeRouter");
 const orderRouter = require("../routers/orderRouter");
@@ -46,7 +46,7 @@ app.use(express.static(static));
 app.set("view engine", "hbs");
 
 const db_link =
-    "mongodb+srv://allinonegold2586:wqXTMbQzGofTbcaG@cluster0.oaidzi7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+    "mongodb+srv://vishwakarma9304411522:iYKrVdZQfHRZvqSw@cluster0.yptxrpi.mongodb.net/?retryWrites=true&w=majority";
 mongoose
     .connect(db_link)
     .then(async function (db) {
@@ -72,7 +72,7 @@ const JWT_SECRET = "VISHAL";
 const one_day = 1000 * 60 * 60 * 100;
 
 var store = new MongoDBStore({
-    uri: "mongodb+srv://allinonegold2586:wqXTMbQzGofTbcaG@cluster0.oaidzi7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    uri: "mongodb+srv://vishwakarma9304411522:iYKrVdZQfHRZvqSw@cluster0.yptxrpi.mongodb.net/?retryWrites=true&w=majority",
     databaseName: "manchestercity",
     collection: "sessions",
 });
